@@ -31,7 +31,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - run: |
         docker pull ${{ env.SRCREGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-        docker tag ${{ env.SRCREGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.DSTREGISTRY }}/${{ genv.IMAGE_NAME }}:0.0.1-SNAPSHOT
+        docker tag ${{ env.SRCREGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ env.DSTREGISTRY }}/${{ env.IMAGE_NAME }}:0.0.1-SNAPSHOT
         docker push ${{ env.DSTREGISTRY }}/${{ env.IMAGE_NAME }}:0.0.1-SNAPSHOT
 
   deploy:
